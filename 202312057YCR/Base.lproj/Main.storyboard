@@ -49,7 +49,7 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="07Q-Vy-8bY">
                                                             <rect key="frame" x="179" y="0.0" width="204" height="79"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="어제 관객 수 출력" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="enZ-EL-9Pd">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="개봉 날짜" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="enZ-EL-9Pd">
                                                                     <rect key="frame" x="0.0" y="0.0" width="204" height="37"/>
                                                                     <color key="backgroundColor" red="0.80460025690000003" green="0.80460025690000003" blue="0.80460025690000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -137,8 +137,8 @@
                         <color key="backgroundColor" red="0.80460025690000003" green="0.80460025690000003" blue="0.80460025690000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="sSw-5n-dAc" firstAttribute="trailing" secondItem="ncX-3F-nPm" secondAttribute="trailing" id="3nB-p9-0Wo"/>
+                            <constraint firstItem="ncX-3F-nPm" firstAttribute="top" secondItem="sSw-5n-dAc" secondAttribute="top" id="LXU-Rv-xxK"/>
                             <constraint firstItem="ncX-3F-nPm" firstAttribute="leading" secondItem="sSw-5n-dAc" secondAttribute="leading" id="XNv-c2-JCK"/>
-                            <constraint firstItem="ncX-3F-nPm" firstAttribute="top" secondItem="sSw-5n-dAc" secondAttribute="top" id="cWl-O4-jC0"/>
                             <constraint firstItem="sSw-5n-dAc" firstAttribute="bottom" secondItem="ncX-3F-nPm" secondAttribute="bottom" id="hay-Dt-2SO"/>
                         </constraints>
                     </view>
@@ -169,6 +169,22 @@
             </objects>
             <point key="canvasLocation" x="64.885496183206101" y="-2.1126760563380285"/>
         </scene>
+        <!--Popcorn-->
+        <scene sceneID="I7I-SU-f6E">
+            <objects>
+                <viewController title="Popcorn" id="EMY-KX-HWS" customClass="PopcornViewController" customModule="_02312057YCR" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DDg-pZ-mpr">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="q8Z-mR-d5b"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Popcorn" image="popcorn.fill" catalog="system" id="Feo-EH-Jsm"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bp4-kJ-Tuh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="421" y="719"/>
+        </scene>
         <!--Theater-->
         <scene sceneID="gzu-Pc-RiW">
             <objects>
@@ -177,8 +193,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="44" translatesAutoresizingMaskIntoConstraints="NO" id="r9Y-7d-ott">
+                                <rect key="frame" x="0.0" y="119" width="394" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lDP-id-Dg9">
+                                        <rect key="frame" x="0.0" y="0.0" width="102" height="60"/>
+                                        <color key="backgroundColor" red="0.95803965550000003" green="0.79547720389999999" blue="0.84093234900000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="CGV">
+                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="cgvTap:" destination="kP5-mg-tMD" eventType="touchUpInside" id="QVq-QZ-dKL"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3OE-Et-v1G">
+                                        <rect key="frame" x="146" y="0.0" width="102" height="60"/>
+                                        <color key="backgroundColor" red="0.95803965550000003" green="0.79547720389999999" blue="0.84093234900000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="메가 박스">
+                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="megaTap:" destination="kP5-mg-tMD" eventType="touchUpInside" id="aN3-Zu-OWD"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uhj-xf-RyX">
+                                        <rect key="frame" x="292" y="0.0" width="102" height="60"/>
+                                        <color key="backgroundColor" red="0.95803965550000003" green="0.79547720389999999" blue="0.84093234900000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="롯데 시네마">
+                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="lotteTap:" destination="kP5-mg-tMD" eventType="touchUpInside" id="F0u-6T-KUY"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="c8G-Av-uQw"/>
+                                </constraints>
+                            </stackView>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gR8-lv-VOP">
-                                <rect key="frame" x="0.0" y="162" width="393" height="573"/>
+                                <rect key="frame" x="0.0" y="196" width="393" height="539"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -189,9 +246,10 @@
                         <viewLayoutGuide key="safeArea" id="bph-fW-UdR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="gR8-lv-VOP" firstAttribute="top" secondItem="bph-fW-UdR" secondAttribute="top" id="3cG-eB-PNW"/>
+                            <constraint firstItem="bph-fW-UdR" firstAttribute="top" secondItem="r9Y-7d-ott" secondAttribute="top" constant="42.999999999999986" id="UyP-Ci-a3E"/>
                             <constraint firstItem="bph-fW-UdR" firstAttribute="bottom" secondItem="gR8-lv-VOP" secondAttribute="bottom" id="bvV-os-lnn"/>
                             <constraint firstItem="bph-fW-UdR" firstAttribute="trailing" secondItem="gR8-lv-VOP" secondAttribute="trailing" id="g70-oH-VWU"/>
+                            <constraint firstItem="gR8-lv-VOP" firstAttribute="top" secondItem="r9Y-7d-ott" secondAttribute="bottom" constant="17" id="nVR-wf-wCi"/>
                             <constraint firstItem="gR8-lv-VOP" firstAttribute="leading" secondItem="bph-fW-UdR" secondAttribute="leading" id="px1-qK-F96"/>
                         </constraints>
                     </view>
@@ -202,7 +260,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Thr-fX-qJ1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1918" y="733"/>
+            <point key="canvasLocation" x="1916.7938931297708" y="732.3943661971831"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="2wZ-FZ-gHC">
@@ -211,12 +269,14 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="7tG-OC-lPk"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nNd-Oo-zDQ">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="lst-2H-ewj"/>
                         <segue destination="kP5-mg-tMD" kind="relationship" relationship="viewControllers" id="cn2-gb-jhf"/>
+                        <segue destination="EMY-KX-HWS" kind="relationship" relationship="viewControllers" id="9qW-NA-VWH"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GeC-Ye-K6u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -227,6 +287,7 @@
     <resources>
         <image name="map.fill" catalog="system" width="128" height="110"/>
         <image name="movieclapper.fill" catalog="system" width="128" height="113"/>
+        <image name="popcorn.fill" catalog="system" width="98" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

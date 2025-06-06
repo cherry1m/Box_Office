@@ -19,6 +19,7 @@ struct DailyBoxOfficeList : Codable {
     let audiCnt : String
     let audiAcc : String
     let rank : String
+    let openDt : String
 }
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -88,12 +89,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         cell.movieName.text = "[\(mRank)위] \(mName)"
         
-        if let aCnt = movieData?.boxOfficeResult.dailyBoxOfficeList[indexPath.row].audiCnt {
-            let numF = NumberFormatter()
-            numF.numberStyle = .decimal
-            let aCount = Int(aCnt)!
-            let result = numF.string(for: aCount)! + "명"
-            cell.audiCount.text = "어제: \(result)"
+        if let openDate = movieData?.boxOfficeResult.dailyBoxOfficeList[indexPath.row].openDt {
+            cell.audiCount.text = "개봉일: \(openDate)"
         }
         if let aAcc = movieData?.boxOfficeResult.dailyBoxOfficeList[indexPath.row].audiAcc {
             let numF = NumberFormatter()

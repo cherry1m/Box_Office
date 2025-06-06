@@ -12,14 +12,34 @@ class MapViewController: UIViewController {
     @IBOutlet weak var webView: WKWebView!
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        let urlKorString = "http://map.naver.com/p/search/영화관"
-        let urlString = urlKorString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-        guard let url = URL(string: urlString) else {return}
-        let request = URLRequest(url: url)
-        webView.load(request)
+           super.viewDidLoad()
+           // 앱 처음 켰을 때 기본 페이지
+           loadWebPage(urlString: "https://map.naver.com/p/search/CGV")
+       }
+    
+    func loadWebPage(urlString: String) {
+        if let encoded = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
+           let url = URL(string: encoded) {
+            let request = URLRequest(url: url)
+            webView.load(request)
+        }
     }
     
 
+    @IBAction func cgvTap(_ sender: UIButton) {
+        
+        loadWebPage(urlString: "https://map.naver.com/p/search/CGV")
+    }
+    
 
+    @IBAction func megaTap(_ sender: UIButton) {
+        
+        loadWebPage(urlString: "https://map.naver.com/p/search/메가박스")
+    }
+    
+
+    @IBAction func lotteTap(_ sender: UIButton) {
+        
+        loadWebPage(urlString: "https://map.naver.com/p/search/롯데시네마")
+    }
 }
